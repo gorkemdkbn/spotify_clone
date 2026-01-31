@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone/core/configs/assets/app_vectors.dart';
 import 'package:spotify_clone/core/configs/theme/app_colors.dart';
+import 'package:spotify_clone/presentation/choose_mode/pages/choose_mode.dart';
 import '../../../core/configs/assets/app_images.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -10,75 +11,73 @@ class GetStartedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
-
     return Scaffold(
-      body: Stack(
+      body:  Stack(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(
-              vertical: height * 0.08,
-              horizontal: width * 0.08,
+            padding: const EdgeInsets.symmetric(
+                vertical: 40,
+                horizontal: 40
             ),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(AppImages.introBG),
-              ),
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(
+                      AppImages.introBG,
+                    )
+                )
+            ),
+          ),
+
+          Container(
+            color: Colors.black.withOpacity(0.15),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                vertical: 40,
+                horizontal: 40
             ),
             child: Column(
               children: [
                 Align(
                   alignment: Alignment.topCenter,
                   child: SvgPicture.asset(
-                    AppVectors.logo,
-                    width: width * 0.35,
+                      AppVectors.logo
                   ),
                 ),
-
                 const Spacer(),
-
-                Text(
-                  'Müzik Dinlemenin Tadını Çıkarın',
+                const Text(
+                  'Enjoy Listening To Music',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: width * 0.045,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 18
+                  ),
+                ),
+                const SizedBox(height: 21,),
+                const Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.grey,
+                      fontSize: 13
                   ),
                   textAlign: TextAlign.center,
                 ),
-
-                SizedBox(height: height * 0.025),
-
-                Text(
-                  'Ruh haline eşlik eden müzikler, keşfet, dinle, hisset, tekrar et.',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.grey,
-                    fontSize: width * 0.04,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-
-                SizedBox(height: height * 0.03),
-
-                SizedBox(
-                  width: width * 0.8,
-                  height: height * 0.06,
-                  child: BasicAppButton(
-                    onPressed: () {},
-                    title: 'Başla',
-                  ),
-                ),
+                const SizedBox(height: 20,),
+                BasicAppButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => const ChooseModePage()
+                          )
+                      );
+                    },
+                    title: 'Get Started'
+                )
               ],
             ),
-          ),
-
-          // Koyu overlay (arka plan için)
-          Container(
-            color: Colors.black.withOpacity(0.10),
           ),
         ],
       ),
