@@ -8,6 +8,7 @@ import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../core/configs/assets/app_images.dart';
 import '../../../core/configs/assets/app_vectors.dart';
 import '../../../core/configs/theme/app_colors.dart';
+import '../../auth/pages/signup_or_sigin.dart';
 import '../bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -142,7 +143,7 @@ class ChooseModePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => const ChooseModePage()
+                          builder: (BuildContext context) => const SignupOrSiginPage()
                       )
                   );
                 },
