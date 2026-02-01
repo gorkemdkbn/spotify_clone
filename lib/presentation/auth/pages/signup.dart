@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone/core/configs/assets/app_vectors.dart';
+import 'package:spotify_clone/presentation/auth/pages/sigin.dart';
 
 import '../../../common/widgets/appbar/app_bar.dart';
 
@@ -101,7 +102,12 @@ class SignupPage extends StatelessWidget {
             fontSize: 14,
           ),
           ),
-          TextButton(onPressed: (){},
+          TextButton(onPressed: (){
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (BuildContext context) =>  const SigninPage()),
+            );
+          },
               child: const Text('Sign In ')
 
           )
