@@ -4,7 +4,10 @@ import 'package:spotify_clone/core/configs/assets/app_images.dart';
 import 'package:spotify_clone/common/helpers/is_dark_mode.dart';
 import 'package:spotify_clone/core/configs/theme/app_colors.dart';
 import 'package:spotify_clone/common/widgets/button/basic_app_button.dart';
-import 'package:spotify_clone/common/helpers/is_dark_mode.dart';
+
+import 'package:spotify_clone/presentation/auth/pages/signup.dart';
+
+
 
 import '../../../common/widgets/appbar/app_bar.dart';
 import '../../../core/configs/assets/app_vectors.dart';
@@ -82,10 +85,15 @@ class SignupOrSiginPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: BasicAppButton(
-                            onPressed: (){},
-                            title: 'Register'
-
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) =>  SignupPage()),
+                            );
+                          },
+                          title: 'Register',
                         ),
+
                       ),
                       SizedBox(width: 20),
                       Expanded(

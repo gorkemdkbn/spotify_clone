@@ -9,11 +9,13 @@ import 'package:spotify_clone/presentation/pages/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
-        ? HydratedStorageDirectory.web
-        : HydratedStorageDirectory((await getTemporaryDirectory()).path),
+        ? HydratedStorage.webStorageDirectory
+        : await getTemporaryDirectory(),
   );
+
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
