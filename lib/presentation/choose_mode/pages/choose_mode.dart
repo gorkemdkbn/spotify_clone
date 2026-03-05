@@ -44,10 +44,13 @@ class ChooseModePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: SvgPicture.asset(
-                  AppVectors.logo
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: SvgPicture.asset(
+                    AppVectors.logo
+                ),
               ),
             ),
             const Spacer(),

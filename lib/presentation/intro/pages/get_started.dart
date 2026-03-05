@@ -39,10 +39,13 @@ class GetStartedPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: SvgPicture.asset(
-                      AppVectors.logo
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: SvgPicture.asset(
+                        AppVectors.logo
+                    ),
                   ),
                 ),
                 const Spacer(),
@@ -56,7 +59,7 @@ class GetStartedPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 21,),
                 const Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  'Discover millions of song, create your own playlists, and enjoy unlimited music streaming anytime, anywhere you go.',
                   style: TextStyle(
                       fontWeight: FontWeight.w500,
                       color: AppColors.grey,
